@@ -1,25 +1,22 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Switch, Route,BrowserRouter,Redirect } from 'react-router-dom';
+
+import AuthPage from './pages/AuthPage';
 
 function App() {
+  console.log('rakhii');
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <React.Fragment>
+      <BrowserRouter>
+      <Switch>
+      <Route
+        path="/auth"
+        component={AuthPage}
+      />
+     <Redirect to="/auth"/>
+    </Switch>
+    </BrowserRouter>
+    </React.Fragment>
   );
 }
 
