@@ -60,8 +60,9 @@ export const  SignUp = () => {
             errors["userName"] = "UserName Cannot be empty"; 
             setError(errors)
          }
-         fields["name"] && window.localStorage.setItem('name', fields["name"]);
-         fields["email"] && window.localStorage.setItem('email', fields["email"]);
+         if(Object.keys(error).length==0)
+          window.localStorage.setItem('firstlogin', 'true');
+       
             }
             
 
@@ -83,6 +84,8 @@ export const  SignUp = () => {
 
             setError(errors);
             setFields(newfields);
+            fields["name"] && window.localStorage.setItem('name', fields["name"]);
+            fields["email"] && window.localStorage.setItem('email', fields["email"]);
         }
 
   return (

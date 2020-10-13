@@ -52,8 +52,12 @@ export const  SignIn = () => {
                 errors["password"] = "Password Cannot be empty"; 
                 setError(errors)
              }
+             if(Object.keys(error).length===0){
+                 console.log('hhh')
+             window.localStorage.setItem('firstlogin', 'false');
             }
-            
+            }
+
 
          const handleChange = (field, fields, e)=>{   
             let newfields =fields;
